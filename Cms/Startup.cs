@@ -15,12 +15,11 @@ namespace Cms
         {
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public override void Configure(IApplicationBuilder app, IRouteBuilder routes, IServiceProvider serviceProvider)
+        public override void Configure(IApplicationBuilder app, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
         {
-            app.Map("/cms", branch => 
-                branch.Run(context => context.Response.WriteAsync("Hello from CMS module"))
-            );
-        }
+            app.Map("/cms", branch =>
+                 branch.Run(context => context.Response.WriteAsync("Hello from CMS module"))
+             );
+        }        
     }
 }
