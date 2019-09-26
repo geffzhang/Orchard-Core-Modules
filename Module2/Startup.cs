@@ -14,16 +14,16 @@ namespace Module2
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public override void ConfigureServices(IServiceCollection services)
         {
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public override void Configure(IApplicationBuilder app, IRouteBuilder routes, IServiceProvider serviceProvider)
+        public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
         {
-            app.Map("/hello", branch => 
+            builder.Map("/hello", branch =>
                 branch.Run(context => context.Response.WriteAsync("Hello World"))
             );
-            
-            app.Map("/info", branch =>
+
+            builder.Map("/info", branch =>
             {
                 branch.Run(context =>
                 {
@@ -31,13 +31,12 @@ namespace Module2
                     return context.Response.WriteAsync(
                         $"Request from tenant: {shellSettings.Name}" + Environment.NewLine +
                         $"RequestUrlHost: {shellSettings.RequestUrlHost}" + Environment.NewLine +
-                        $"RequestUrlPrefix: {shellSettings.RequestUrlPrefix}" + Environment.NewLine +
-                        $"DatabaseProvider: {shellSettings.DatabaseProvider}" + Environment.NewLine +
-                        $"TablePrefix: {shellSettings.TablePrefix}" + Environment.NewLine +
-                        $"ConnectionString: {shellSettings.ConnectionString}"
+                        $"RequestUrlPrefix: {shellSettings.RequestUrlPrefix}" + Environment.NewLine
                     );
                 });
             });
         }
+
+       
     }
 }

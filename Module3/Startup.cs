@@ -26,18 +26,5 @@ namespace Module3
                 defaults: new { controller = "Home", action = "Index" }
             );
         }
-
-        //// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        //public override void Configure(IApplicationBuilder app, IRouteBuilder routes, IServiceProvider serviceProvider)
-        //{
-        //    routes.MapAreaRoute(
-        //        name: "Module3Route",
-        //        areaName: "Module3",
-        //        template: "FooBar/{action}",
-        //        // route directly to root project:
-        //        // template: "{action}",
-        //        defaults: new {controller = "Home", action = "Index" }
-        //    );
-        //}
     }
 }

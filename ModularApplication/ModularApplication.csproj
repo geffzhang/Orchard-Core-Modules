@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <!-- References the MVC targets to mark this application as modular and reference the MVC module -->
-    <PackageReference Include="OrchardCore.Application.Targets" Version="1.0.0-rc1-10004" />
+      <PackageReference Include="OrchardCore.Application.Mvc.Targets" Version="1.0.0-rc1-10027" />
   </ItemGroup>
 
   <ItemGroup>
